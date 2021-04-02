@@ -1,0 +1,14 @@
+let count = 0;
+let request = new XMLHttpRequest();
+request.open("GET" , "https://restcountries.eu/rest/v2/all" , true);
+request.send();
+request.onload = function() {
+    var myRestCountry = JSON.parse(this.response);
+    //console.log(myRestCountry);
+    myRestCountry.forEach((item) => {
+        console.log("Name :" + item.name);
+        console.log("Capital :" + item.capital);
+        console.log("Flag :" + item.flag);
+    });
+    
+}
