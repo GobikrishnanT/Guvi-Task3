@@ -1,0 +1,13 @@
+let request = new XMLHttpRequest();
+request.open("GET" , "https://restcountries.eu/rest/v2/all" , true);
+request.send();
+request.onload = function() {
+    var myRestCountry = JSON.parse(this.response);
+    //console.log(myRestCountry);
+    let totalPopulation = myRestCountry.reduce((Acc , cur_Item) => {
+        Acc+=cur_Item.population;
+        return Acc;
+    } , 0);
+    console.log(totalPopulation);
+    
+}
