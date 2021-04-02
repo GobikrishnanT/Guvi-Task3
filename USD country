@@ -1,0 +1,14 @@
+let request = new XMLHttpRequest();
+request.open("GET" , "https://restcountries.eu/rest/v2/all" , true);
+request.send();
+request.onload = function() {
+    var myRestCountry = JSON.parse(this.response);
+    // for(let index in myRestCountry) {
+    //     console.log(myRestCountry[index].currencies[0].code);
+    // }
+    let usCountry = myRestCountry.filter((item) => {
+       return item.currencies[0].code === "USD";
+    });
+    console.log(usCountry);
+    
+}
