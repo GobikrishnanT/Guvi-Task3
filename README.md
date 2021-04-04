@@ -9,4 +9,4 @@ Solving problems using array functions on rest countries data.
 
 - Print the total population of countries using reduce function 
 
-- Print the country which use US Dollars as currency..
+- Print the country which use US Dollars as currency.
